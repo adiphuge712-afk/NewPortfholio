@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Full Stack Developer Portfolio</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #2c3e50;
+            /* Dark Blue for Enterprise/Java feel */
+            --accent-color: #e67e22;
+            /* Orange for call-to-actions */
+            --bg-light: #f4f7f6;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #bdc3c7;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        /* --- SKILLS SECTION --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #ecf0f1;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            /* border-radius: 15px;  Optional: modern rounded corners */
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .link-text {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact {
+            text-align: center;
+            background-color: var(--white);
+            padding: 5rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Add toggle for mobile if needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Aditya<span>Portfolio</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="hero">
+        <div class="hero-content">
+            <h1>Java Full Stack Developer</h1>
+            <p>Building robust, scalable applications from backend to frontend.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Backend Development</h3>
+                <div class="tech-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Spring Maven</span>
+                    <span class="tag">Microservices</span>
+                    <span class="tag">Hibernate</span>
+                    <span class="tag">RESTful APIs</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Frontend Development</h3>
+                <div class="tech-tags">
+                    <span class="tag">React.js</span>
+                    <span class="tag">HTML & CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database & DevOps</h3>
+                <div class="tech-tags">
+                    <span class="tag">MySQL/PostgreSQL</span>
+                    <span class="tag">Render</span>
+                    <span class="tag">Docker(Basic)</span>
+                    <span class="tag">Git & GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="SmartCochingImg1.jpg" alt="Smart Coaching System">
+                </div>
+                <div class="project-info">
+                    <h3>Smart Coaching & Training Planner</h3>
+                    <p>Java Full-stack productivity tool with JWT Authentication, Role-based access control, and
+                        real-time updates.</p>
+                    <div class="tech-tags" style="justify-content: flex-start; margin-bottom: 1rem;">
+                        <span class="tag">Spring Security</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Hibernate</span>
+                        <span class="tag">React.js</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="link-text">View Code &rarr;</a> -->
+                        <a href="https://cravita-frontend-of-task.onrender.com/" target="_blank" class="link-text">Live
+                            Demo &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <!-- <span>Company Visitor Management System</span> -->
+                    <img src="company.jpg" alt="Company Visitor management System">
+                </div>
+                <div class="project-info">
+                    <h3>Company Visitor Management System</h3>
+                    <p>Data visualization dashboard for inventory tracking. Features take the Visitor details and give
+                        the Permition to client .</p>
+                    <div class="tech-tags" style="justify-content: flex-start; margin-bottom: 1rem;">
+                        <span class="tag">Php</span>
+                        <span class="tag">MySQL</span>
+
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="link-text">View Code &rarr;</a> -->
+                        <!-- <a href="#" class="link-text">Live Demo &rarr;</a> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Currently open to new opportunities. Feel free to reach out
+            via email or LinkedIn.</p>
+        <a href="mailto:adiphuge712@gmail.com?subject=Regarding Your Portfolio&body=Hello Aditya,%0A%0AI saw your portfolio and would like to connect."
+            target="_blank" class="contact-btn">Send Email</a>
+        <a href="https://www.linkedin.com/in/aditya-phuge-9a1b62251/" target="_blank" class="contact-btn">LinkedIn
+            Profile</a>
+        <a href="https://github.com/adiphuge712-afk" target="_blank" class="contact-btn">GitHub Profile</a>
+        <a href="AdityaResume.pdf" download class="contact-btn">Resume</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Aditya Phuge. Built with Java & Love.</p>
+    </footer>
+
+</body>
+
+</html>
