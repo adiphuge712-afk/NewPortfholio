@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Inter,Segoe UI,Arial,sans-serif">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1a2e"/><stop offset="1" stop-color="#1a1440"/></linearGradient></defs>
+<rect width="640" height="360" fill="url(#bg)"/>
+<rect x="30" y="28" width="580" height="304" rx="16" fill="#0f1220" stroke="#ffffff22"/>
+<text x="55" y="66" fill="#fff" font-size="18" font-weight="700">Visitor Management</text>
+<rect x="470" y="46" width="110" height="26" rx="13" fill="url(#g)"/><text x="525" y="63" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">+ New Visitor</text>
+<g font-size="11"><rect x="55" y="88" width="160" height="56" rx="12" fill="#ffffff0d" stroke="#ffffff1a"/><text x="70" y="110" fill="#ffffff99">Today's visitors</text><text x="70" y="134" fill="#22d3ee" font-size="20" font-weight="800">32</text>
+<rect x="228" y="88" width="160" height="56" rx="12" fill="#ffffff0d" stroke="#ffffff1a"/><text x="243" y="110" fill="#ffffff99">Pending approval</text><text x="243" y="134" fill="#fbbf24" font-size="20" font-weight="800">5</text>
+<rect x="401" y="88" width="179" height="56" rx="12" fill="#ffffff0d" stroke="#ffffff1a"/><text x="416" y="110" fill="#ffffff99">Checked in</text><text x="416" y="134" fill="#34d399" font-size="20" font-weight="800">27</text></g>
+<rect x="55" y="160" width="525" height="152" rx="12" fill="#ffffff0d" stroke="#ffffff1a"/>
+<g font-size="11" fill="#ffffff88"><text x="72" y="182">VISITOR</text><text x="230" y="182">HOST</text><text x="350" y="182">TIME</text><text x="470" y="182">STATUS</text></g>
+<line x1="55" y1="192" x2="580" y2="192" stroke="#ffffff1a"/>
+<g font-size="12" fill="#fff">
+<circle cx="80" cy="216" r="10" fill="#7c5cff"/><text x="98" y="220">Rahul Sharma</text><text x="230" y="220">HR Dept</text><text x="350" y="220">10:15 AM</text><rect x="470" y="205" width="84" height="22" rx="11" fill="#34d39933"/><text x="512" y="220" text-anchor="middle" fill="#34d399" font-size="11" font-weight="700">Approved</text>
+<circle cx="80" cy="254" r="10" fill="#22d3ee"/><text x="98" y="258">Neha Patil</text><text x="230" y="258">Accounts</text><text x="350" y="258">10:40 AM</text><rect x="470" y="243" width="84" height="22" rx="11" fill="#fbbf2433"/><text x="512" y="258" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">Pending</text>
+<circle cx="80" cy="292" r="10" fill="#f472b6"/><text x="98" y="296">Amit Deshmukh</text><text x="230" y="296">IT Support</text><text x="350" y="296">11:05 AM</text><rect x="470" y="281" width="84" height="22" rx="11" fill="#f8717133"/><text x="512" y="296" text-anchor="middle" fill="#f87171" font-size="11" font-weight="700">Denied</text></g>
+</svg>
